@@ -129,9 +129,6 @@
         width: 250px;
         bottom: 10%;
     }
-    #home-page .box-about p {
-        font-size: 6px;
-    }
     #navbar-fixed .container h1 {
         font-size: 20px;
     }
@@ -144,7 +141,10 @@
     }
     #landing-services .box-doubt-services {
         top: 35px;
-        left: 50px;
+        left: 30px;
+    }
+    #landing-services .box-doubt-services i {
+        font-size: 20px;
     }
     #landing-services .modal-doubt.active {
         left: 50px;
@@ -181,11 +181,6 @@
     #landing-technology .modal-feedback.active {
         left: 50%;
         transform: translateX(-50%);
-    }
-    .titles {
-        font-size: 20px;
-        color: #fff;
-        font-weight: bold;
     }
     #landing-technology .container .box-technologys .bar {
         width: 150px;
@@ -242,9 +237,9 @@
 
 @media screen and (max-width: 300px) {
     .subtitles {
-        font-size: 9px;
+        font-size: 13px;
     }
     .titles {
-        font-size: 11px;
+        font-size: 16px;
     }
 }
