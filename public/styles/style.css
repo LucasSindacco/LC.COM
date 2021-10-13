@@ -114,6 +114,10 @@ button:hover {
     font-weight: 300;
 }
 
+#navbar-fixed .container nav ul li #close {
+    display: none;
+}
+
 #navbar-fixed .container.active nav ul li a {
     color: #222222;
 }
@@ -235,6 +239,9 @@ button:hover {
 #home-page .social-medias ul li {
     transform: rotate(-90deg);
     margin: 20px 0;
+}
+
+#home-page .social-medias ul li:hover {
     animation: zoom-in-zoom-out 1s infinite;
 }
 
@@ -333,11 +340,15 @@ button:hover {
 }
 
 #landing-services .box-doubt-services i {
-    color: #ED704A;
+    color: #fff;
     font-size: 33px;
     margin-top: 20px;
     cursor: pointer;
-    animation: jump 1.2s infinite;
+}
+
+#landing-services .box-doubt-services i:hover {
+    color: #ED704A;
+    transition: ease-in-out .3s;
 }
 
 #landing-services .modal-doubt {
@@ -550,6 +561,23 @@ button:hover {
     transition: ease-in-out .3s;
 }
 
+#landing-technology .container .text-technology h3 {
+    color: #fff;
+    margin: 10px 0;
+    cursor: pointer;
+    font-weight: 350;
+    transition: ease-in-out .3s;
+}
+
+#landing-technology .container .text-technology h3:hover {
+    transition: ease-in-out .3s;
+    color: #ED704A;
+}
+
+#landing-technology .container .text-technology h3 i {
+    margin: 0 10px;
+}
+
 
 /* Landing Contract */
 
@@ -710,29 +738,5 @@ main .container #home-button {
     }
     100% {
         transform: rotate(360deg);
-    }
-}
-
-@keyframes jump {
-    0% {
-        transform: translate(-50%, -50%) scale(1.25, 0.75);
-    }
-    50% {
-        transform: translate(-50%, -150%) scale(1, 1);
-    }
-    55% {
-        transform: translate(-50%, -150%) rotate(15deg);
-    }
-    60% {
-        transform: translate(-50%, -150%) rotate(-15deg);
-    }
-    65% {
-        transform: translate(-50%, -150%) rotate(15deg);
-    }
-    70% {
-        transform: translate(-50%, -150%) rotate(-15deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1.25, 0.75);
     }
 }
