@@ -28,9 +28,10 @@ const openNavbar = () => {
     responsiveNavbar.classList.toggle('active');
 }
 
-responsiveNavbar.addEventListener('mouseleave', () => {
+const buttonCloseNavbar = document.querySelector('#close');
+const closeNavbar = () => {
     responsiveNavbar.classList.remove('active');
-});
+}
 
 const buttonSettings = document.querySelector('.buttonSettings');
 const boxSettings = document.querySelector('.box-settings');
@@ -51,34 +52,15 @@ const removeBoxSettings = () => {
 const buttonChecked = (click) => {
     const hyperLinks = document.querySelectorAll('.social-medias > ul > li');
     if (click === 'stop') {
-        window.alert("Todas as animações do site foram desligadas");
-        hyperLinks.forEach((itens) => {
-            itens.animate([
-                { transform: 'rotate(0deg)' },
-                { transform: 'rotate(0deg)' },
-            ], {
-                duration: 1000,
-                iterations: Infinity,
-            });
-        })
+        window.alert("Animações desligadas");
         clearInterval(timerText);
         clearInterval(imagesAnimations);
         clearInterval(changeColors);
         removeBoxSettings();
     }
     if (click === 'play') {
-        window.alert("Todas as animações do site foram ligadas");
-        hyperLinks.forEach((itens) => {
-            itens.animate([
-                { transform: 'rotate(0deg)' },
-                { transform: 'rotate(360deg)' }
-            ], {
-                duration: 1000,
-                iterations: Infinity,
-            });
-        })
+        window.alert("Animações ligadas");
         setInterval(textServicesAnimation, 100);
-        setInterval(changeImages, 2000);
         setInterval(changeIntervalColor, 500);
         removeBoxSettings();
     }
@@ -135,22 +117,18 @@ const mouseHover = () => {
         })
     })
 }
-const changeImages = () => {
-    allImages.forEach((images) => {
-        images.src = './public/images/' + parseInt(Math.random() * allImages.length) + '.png';
-    })
-}
 const technologysText = document.querySelectorAll('[data-target]');
-const skillsAnimation = () => {
+
+const buttonViewSkills = document.querySelector('#view-technology');
+
+const viewSkills = () => {
     technologysText.forEach((skillsTechnology) => {
-        skillsTechnology.addEventListener('mouseover', () => {
-            document.querySelector(skillsTechnology.dataset.target).classList.add("active");
-            animationProgressBar("javascript", "40%", 250);
-            animationProgressBar("html", "70%", 300);
-            animationProgressBar("css", "70%", 150);
-            animationProgressBar("bootstrap", "50%", 200);
-            animationProgressBar("csharp", "40%", 210);
-        });
+        document.querySelector(skillsTechnology.dataset.target).classList.add("active");
+        animationProgressBar("javascript", "40%", 250);
+        animationProgressBar("html", "70%", 300);
+        animationProgressBar("css", "70%", 150);
+        animationProgressBar("bootstrap", "50%", 200);
+        animationProgressBar("csharp", "40%", 210);
     });
 }
 
@@ -160,7 +138,6 @@ const animationProgressBar = (itens, porcentage, speed) => {
         const element = document.getElementById(itens);
         const progress = element.querySelector('.progressBar');
         progress.style.width = porcentage;
-
     }, speed)
 }
 
@@ -190,31 +167,13 @@ const greatFeedback = () => {
     textFeedback.classList.add('active');
     textFeedback.style.color = "#67FF6D";
     scoreWebsite = scoreWebsite + 1;
-    textFeedback.textContent = "Obrigado que gostou 💚... Pontução no site: " + scoreWebsite;
-    if (scoreWebsite === 5) {
-        textFeedback.textContent = "Eita  5 likes?";
-    }
-    if (scoreWebsite === 10) {
-        textFeedback.textContent = "EITA  10 LIKES?";
-    }
-    if (scoreWebsite === 20) {
-        alert("EITA 20????? PIX -> web.designluckas@gmail.com");
-    }
+    textFeedback.textContent = "Obrigado que gostou 💚";
 }
 
 const rageFeedback = () => {
     textFeedback.classList.add('active');
     textFeedback.textContent = "Farei melhor na próxima vez 😟"
     textFeedback.style.color = "#FF6767";
-    scoreWebsite = scoreWebsite - 1;
-    if (scoreWebsite < 0) {
-        alert("Poxa você não gostou, o que eu te fiz? expulsando você do site...");
-        setTimeout(() => {
-            window.location = "https://www.google.com/";
-        }, 1000);
-    } else {
-        textFeedback.textContent = "Seus pontos no site: " + scoreWebsite;
-    }
 }
 
 const buttonDonate = document.querySelector('.button-donate');
@@ -269,11 +228,11 @@ load();
 
 // Animations Active
 mouseHover();
-skillsAnimation();
-const imagesAnimations = setInterval(changeImages, 2000);
 const changeColors = setInterval(changeIntervalColor, 500);
 
 // Clicks 
+buttonCloseNavbar.addEventListener('click', closeNavbar);
+buttonViewSkills.addEventListener('click', viewSkills);
 buttonUpDown.addEventListener('click', upDownPage);
 buttonDonate.addEventListener('click', donate)
 feedbacks[0].addEventListener('click', greatFeedback);
