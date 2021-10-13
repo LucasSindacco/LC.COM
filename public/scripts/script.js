@@ -11,6 +11,16 @@ const scrollEffect = () => {
 }
 scrollEffect();
 
+const buttonUpDown = document.querySelector('#button-updown');
+
+const upDownPage = () => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+    })
+}
+
 const responsiveButtonNav = document.querySelector("#responsiveNavButton");
 const responsiveNavbar = document.querySelector('#responsive-nav');
 
@@ -122,7 +132,6 @@ const mouseHover = () => {
     allImages.forEach((images) => {
         images.addEventListener('mouseover', () => {
             images.src = './public/images/' + parseInt(Math.random() * allImages.length) + '.png';
-            console.log(images.src = './public/images/' + parseInt(Math.random() * allImages.length) + '.png');
         })
     })
 }
@@ -265,6 +274,7 @@ const imagesAnimations = setInterval(changeImages, 2000);
 const changeColors = setInterval(changeIntervalColor, 500);
 
 // Clicks 
+buttonUpDown.addEventListener('click', upDownPage);
 buttonDonate.addEventListener('click', donate)
 feedbacks[0].addEventListener('click', greatFeedback);
 feedbacks[1].addEventListener('click', rageFeedback);
