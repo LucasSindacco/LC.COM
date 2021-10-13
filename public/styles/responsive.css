@@ -129,6 +129,9 @@
         width: 250px;
         bottom: 10%;
     }
+    #home-page .box-about p {
+        font-size: 8px;
+    }
     #navbar-fixed .container h1 {
         font-size: 20px;
     }
