@@ -161,6 +161,25 @@ button:hover {
     flex-direction: column;
 }
 
+#home-page .updown {
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    z-index: 2;
+}
+
+#home-page .updown i {
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+}
+
+#home-page .updown i:hover {
+    color: #ED704A;
+    transition: ease-in-out .3s;
+}
+
 #home-page .container .name {
     color: #fff;
     font-size: 100px;
