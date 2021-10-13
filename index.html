@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -39,10 +39,13 @@
         </div>
     </header>
     <main id="home-page">
+        <div class="updown">
+            <i class="fas fa-sort-up" id="button-updown"></i>
+        </div>
         <div class="container">
             <h1 class="name">Lucas <br> <span>Oliveira</span></h1>
         </div>
-        <div class="box-about">
+        <div class="box-about" data-aos="fade-up">
             <h3>Sobre mim</h3>
             <p>Olá meu nome é Lucas, tenho 18 anos moro no interior do Rio de Janeiro e você está em meu Portfólio, espero que gostem dos meus trabalhos. Sou uma pessoa que gosta de falar muito sobre filosofia, sempre penso positivo, e me esforço ao máximo,
                 meus interesse atualmente é se especializar em Programação, tenho interesse nas linguagens JavaScript e C#, também possuo interesse na livravia React.JS, meus hobbys são jogar video-game, ir a praia, sair para bares e restaurantes, bom
@@ -204,6 +207,12 @@
         </div>
         <span>Carregando algumas coisas...</span>
     </div>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Start AOS -->
+    <script>
+        AOS.init();
+    </script>
     <script src="public/scripts/script.js"></script>
 </body>
 
