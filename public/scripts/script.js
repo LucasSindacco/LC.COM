@@ -1,18 +1,20 @@
 const scrollEffect = () => {
     window.addEventListener('scroll', () => {
         const navbar = document.querySelector('header .container');
+        const updownControl = document.querySelector('.updown');
         const scroll = this.scrollY;
         if (scroll > 10) {
             navbar.classList.add('active');
+            updownControl.classList.add("active");
         } else {
             navbar.classList.remove('active');
+            updownControl.classList.remove("active");
         }
     });
 }
 scrollEffect();
 
 const buttonUpDown = document.querySelector('#button-updown');
-
 const upDownPage = () => {
     window.scrollTo({
         top: 0,
