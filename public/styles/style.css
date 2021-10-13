@@ -75,7 +75,7 @@ button:hover {
     display: flex;
     transition: ease-in-out .3s;
     justify-content: space-between;
-    padding: 30px 50px;
+    padding: 25px 50px;
     align-items: center;
     position: fixed;
     top: 0;
@@ -116,6 +116,10 @@ button:hover {
 
 #navbar-fixed .container nav ul li #close {
     display: none;
+}
+
+#navbar-fixed .container nav ul li #close {
+    font-size: 25px;
 }
 
 #navbar-fixed .container.active nav ul li a {
@@ -170,6 +174,15 @@ button:hover {
     left: 30px;
     bottom: 30px;
     z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: ease-in-out .3s;
+}
+
+#home-page .updown.active {
+    visibility: visible;
+    opacity: 1;
+    transition: ease-in-out .3s;
 }
 
 #home-page .updown i {
